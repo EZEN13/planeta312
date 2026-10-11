@@ -1,4 +1,4 @@
-/* Планета-312, лендинг v2. Без зависимостей: движение на CSS-переходах,
+/* Планета-312, лендинг v3. Без зависимостей: движение на CSS-переходах,
    IntersectionObserver и одном requestAnimationFrame-цикле на скролл. */
 (function () {
   'use strict';
@@ -202,7 +202,8 @@
     el.style.removeProperty('--d');
   }
 
-  var revealEls = $$('[data-reveal]');
+  // [data-draw]: блок не прячется, только получает .is-in, чтобы прочертить линию (путь основателя, переход к офисам)
+  var revealEls = $$('[data-reveal], [data-draw]');
   if ('IntersectionObserver' in window && !reduced()) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -232,17 +233,15 @@
   /* ---------- Маршрут на первом экране ---------- */
   var hero = $('[data-hero]');
   var route = $('[data-route]');
-  var heroOpts = $$('.hero-opt');
   var countries = ['kg', 'tj', 'uz'];
   var activeCountry = 'kg';
   var cycleTimer = null;
-  var userTookOver = false;
+  var paused = false;
 
   function setCountry(c) {
     activeCountry = c;
     if (route) route.setAttribute('data-active', c);
     if (hero) hero.setAttribute('data-active', c);
-    heroOpts.forEach(function (o) { o.classList.toggle('is-hot', o.dataset.country === c); });
   }
   if (route) {
     setCountry('kg');
@@ -278,9 +277,10 @@
       new IntersectionObserver(function (es) { heroVisible = es[0].isIntersecting; startTravel(); }).observe(route);
     }
 
-    // Автоперебор стран, пока человек сам не навёл или не нажал
+    // Автоперебор стран; наведение на название страны в заголовке подсвечивает её маршрут
     function cycle() {
-      if (userTookOver || reduced()) return;
+      clearTimeout(cycleTimer);
+      if (paused || reduced()) return;
       cycleTimer = setTimeout(function () {
         if (!heroVisible || document.hidden) { cycle(); return; }
         var next = countries[(countries.indexOf(activeCountry) + 1) % countries.length];
@@ -290,11 +290,12 @@
     }
     cycle();
 
-    heroOpts.forEach(function (o) {
-      var take = function () { userTookOver = true; clearTimeout(cycleTimer); setCountry(o.dataset.country); };
-      o.addEventListener('mouseenter', take);
-      o.addEventListener('focus', take);
-    });
+    if (finePointer) {
+      $$('.hero__title .hl').forEach(function (h) {
+        h.addEventListener('mouseenter', function () { paused = true; clearTimeout(cycleTimer); setCountry(h.dataset.from); });
+        h.addEventListener('mouseleave', function () { paused = false; cycle(); });
+      });
+    }
   }
 
   /* ---------- Магнитная главная кнопка (только мышь) ---------- */
@@ -347,7 +348,6 @@
 
   /* ---------- Квиз ---------- */
   var quiz = $('[data-quiz]');
-  var quizApi = null;
   if (quiz) {
     var steps = $$('.quiz__step', quiz);
     var total = steps.length;
@@ -513,18 +513,11 @@
       });
     });
 
-    // Старт из карточки на первом экране: страна уже выбрана, сразу второй вопрос
-    quizApi = {
-      startWithCountry: function (c, label) {
-        answers = { country: c }; labels = { country: label }; history = [0]; skipDoc = false;
-        show(1, 'fwd');
-      }
-    };
-
     show(0);
+  }
 
-    /* Форма «Перезвоните мне»: проверка полей */
-    var form = $('[data-callback]', quiz);
+  /* Формы «Перезвоните мне» (в результате квиза и в финальной карточке): проверка полей */
+  $$('[data-callback]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var name = form.elements.namedItem('name');
@@ -537,19 +530,6 @@
       if (!okName) { name.focus(); return; }
       if (!okPhone) { phone.focus(); return; }
       $('[data-callback-ok]', form).hidden = false;
-    });
-  }
-
-  heroOpts.forEach(function (o) {
-    o.addEventListener('click', function () {
-      setCountry(o.dataset.country);
-      if (quizApi) quizApi.startWithCountry(o.dataset.country, o.textContent.trim());
-      var target = document.getElementById('quiz');
-      target.scrollIntoView({ behavior: reduced() ? 'auto' : 'smooth', block: 'start' });
-      setTimeout(function () {
-        var first = $('.quiz__step:not([hidden]) .option', quiz);
-        if (first) first.focus({ preventScroll: true });
-      }, reduced() ? 0 : 700);
     });
   });
 
@@ -663,17 +643,34 @@
     compute();
   }
 
-  /* ---------- Фильтр кейсов ---------- */
-  var filters = $$('.filter');
-  filters.forEach(function (b) {
-    b.addEventListener('click', function () {
-      var c = b.dataset.filter;
-      filters.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-      $$('.case').forEach(function (card) {
-        var hide = c !== 'all' && card.dataset.country !== c;
-        card.hidden = hide;
-        if (!hide) { card.classList.remove('is-shown'); void card.offsetWidth; card.classList.add('is-shown'); }
+  /* ---------- Видеоотзывы: фасад. Плеер Boomstream грузится только по нажатию ---------- */
+  var vmodal = $('[data-vmodal]');
+  var vframe = $('[data-vmodal-frame]');
+  var vOpener = null;
+  if (vmodal && typeof vmodal.showModal === 'function') {
+    var closeVideo = function () { if (vmodal.open) vmodal.close(); };
+    vmodal.addEventListener('close', function () {
+      vframe.textContent = ''; // убираем iframe: звук и загрузка останавливаются
+      if (vOpener) vOpener.focus({ preventScroll: true });
+    });
+    vmodal.addEventListener('click', function (e) { if (e.target === vmodal) closeVideo(); }); // клик по фону
+    $('[data-vmodal-close]', vmodal).addEventListener('click', closeVideo);
+    $$('[data-video]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        vOpener = a;
+        var f = document.createElement('iframe');
+        // autostart и title — параметры плеера Boomstream: старт по нажатию, без имени файла поверх видео
+        f.src = 'https://play.boomstream.com/' + encodeURIComponent(a.dataset.video) + '?autostart=1&title=0';
+        f.title = a.getAttribute('aria-label') || 'Видеоотзыв';
+        f.allow = 'autoplay; fullscreen; picture-in-picture';
+        f.setAttribute('allowfullscreen', '');
+        vframe.textContent = '';
+        vframe.appendChild(f);
+        vmodal.showModal();
+        $('[data-vmodal-close]', vmodal).focus();
       });
     });
-  });
+  }
+  // без поддержки <dialog> ссылка просто открывает плеер в новой вкладке
 })();

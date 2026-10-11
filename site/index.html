@@ -45,6 +45,9 @@
     <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
     <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></symbol>
     <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M6 4.8a1.5 1.5 0 0 1 2.26-1.3l11.5 7.2a1.5 1.5 0 0 1 0 2.6l-11.5 7.2A1.5 1.5 0 0 1 6 19.2Z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
   </defs>
 </svg>
 
@@ -77,9 +80,10 @@
       <span class="logo__name">Планета-312</span>
     </a>
     <nav class="nav" aria-label="Разделы">
-      <a href="#docs">Документы</a>
+      <a href="#about">О нас</a>
+      <a href="#reviews">Отзывы</a>
       <a href="#prices">Цены</a>
-      <a href="#safety">Безопасность</a>
+      <a href="#quiz">Проверка</a>
       <a href="#calc">Калькулятор</a>
       <a href="#offices">Контакты</a>
     </nav>
@@ -107,7 +111,7 @@
 
 <main id="main">
 
-<!-- 2. Первый экран: заголовок, маршрут, живая карточка проверки -->
+<!-- 1. Первый экран: заголовок, действие, карта маршрутов как визуальный герой -->
 <section class="hero dark" id="top" data-hero>
   <svg class="hero__lattice" aria-hidden="true"><rect width="100%" height="100%" fill="url(#o-lattice)"/></svg>
   <div class="container hero__grid">
@@ -167,27 +171,7 @@
         <span class="route__label route__label--uz" data-from="uz">Ташкент</span>
         <span class="route__label route__label--tj" data-from="tj">Душанбе</span>
       </div>
-
-      <div class="hero-card" data-hero-card>
-        <div class="hero-card__top">
-          <p class="hero-card__step">Вопрос 1 из 6</p>
-          <span class="hero-card__bar" aria-hidden="true"><span></span></span>
-        </div>
-        <p class="hero-card__q" id="hero-q">Гражданином какой страны вы являетесь?</p>
-        <div class="hero-card__options" role="group" aria-labelledby="hero-q">
-          <button type="button" class="hero-opt" data-country="kg">Кыргызстан<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
-          <button type="button" class="hero-opt" data-country="tj">Таджикистан<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
-          <button type="button" class="hero-opt" data-country="uz">Узбекистан<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
-        </div>
-        <a class="hero-card__more" href="#quiz">Другая страна или Россия</a>
-      </div>
     </div>
-
-    <ul class="facts" data-stagger>
-      <li data-reveal><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg><span>Офисы: Москва, Волгоградский пр-т, 28; Петербург, Невский пр-т, 118</span></li>
-      <li data-reveal><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg><span>ООО «Планета-312», ИНН 5027297830</span></li>
-      <li data-reveal><svg class="icon" aria-hidden="true"><use href="#i-file-text"/></svg><span>Договор до оплаты, оплата по этапам</span></li>
-    </ul>
   </div>
 
   <div class="marquee" aria-hidden="true">
@@ -202,8 +186,217 @@
   </div>
 </section>
 
-<!-- 3. Какой у вас документ -->
-<section class="section" id="docs" aria-labelledby="docs-title">
+<!-- 2. Полоса цифр. Источник: текущий сайт клиента (planeta312.com). ПОДТВЕРДИТЬ У КЛИЕНТА перед публикацией: 2015 — опыт основателя, ООО с 2021 -->
+<section class="numbers" id="numbers" aria-label="Планета-312 в цифрах">
+  <div class="container">
+    <ul class="numbers__list" data-stagger>
+      <li class="numbers__item" data-reveal><p class="numbers__num"><span class="numbers__pre">с</span><span data-count="2015" data-count-from="2005" data-plain>2015</span></p><p class="numbers__text">года помогаем с ипотекой</p></li>
+      <li class="numbers__item" data-reveal><p class="numbers__num"><span data-count="2">2</span></p><p class="numbers__text">офиса: Москва и Санкт-Петербург</p></li>
+      <li class="numbers__item" data-reveal><p class="numbers__num"><span data-count="26">26</span></p><p class="numbers__text">специалистов в команде</p></li>
+      <li class="numbers__item" data-reveal><p class="numbers__num"><span data-count="8000">8&nbsp;000</span><span class="numbers__plus">+</span></p><p class="numbers__text">клиентов</p></li>
+      <li class="numbers__item" data-reveal><p class="numbers__num"><span data-count="30000">30&nbsp;000</span><span class="numbers__plus">+</span></p><p class="numbers__text">консультаций</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 3. Кто мы: история основателя -->
+<section class="section dark" id="about" aria-labelledby="about-title">
+  <div class="kaima" aria-hidden="true"></div>
+  <svg class="section__lattice" aria-hidden="true"><rect width="100%" height="100%" fill="url(#o-lattice)"/></svg>
+  <div class="container">
+    <div class="story">
+      <figure class="founder__frame" data-reveal>
+        <svg class="founder__outline" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 1V0.36C0 0.2 0.22 0.06 0.5 0C0.78 0.06 1 0.2 1 0.36V1" vector-effect="non-scaling-stroke"/></svg>
+        <span class="founder__arch">
+          <img class="founder__photo" src="assets/founder/akmatova.webp" width="320" height="400" alt="Зарита Акматова, основатель агентства" loading="lazy" decoding="async">
+        </span>
+      </figure>
+      <div class="story__text">
+        <h2 id="about-title" data-reveal>Кто мы</h2>
+        <p class="section__lead" data-reveal style="--d: 1">«Планета-312» основала Зарита Акматова. Она сама приехала в Россию трудовым мигрантом и по себе знает, каково обустраиваться в другой стране.</p>
+        <blockquote class="story__quote" data-reveal style="--d: 2">
+          <p>«В 2015 году у меня появилась идея открыть своё агентство и помогать гражданам СНГ получать ипотеку».</p>
+          <footer class="story__sign">Зарита Акматова, основатель «Планета-312»</footer>
+        </blockquote>
+      </div>
+    </div>
+
+    <ol class="path" data-stagger data-draw>
+      <li class="path__item" data-reveal><p class="path__mark">Начало</p><h3>Приехала в Россию трудовым мигрантом</h3><p>Прошла тот же путь, что и наши клиенты: документы, работа, жизнь в чужом городе.</p></li>
+      <li class="path__item" data-reveal><p class="path__mark">13 лет</p><h3>Работала в банке</h3><p>От кассира до управляющего. Знает, как банк смотрит на заявку изнутри.</p></li>
+      <li class="path__item" data-reveal><p class="path__mark">2015</p><h3>Решила помогать землякам с жильём</h3><p>Начала помогать гражданам Кыргызстана, Таджикистана и Узбекистана получать ипотеку в России.</p></li>
+      <li class="path__item" data-reveal><p class="path__mark">Сегодня</p><h3>Агентство в Москве и Петербурге</h3><p>26 специалистов, договор с ООО «Планета-312». Помогаем и гражданам России.</p></li>
+    </ol>
+    <p class="mock-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Макет: цитата по тексту текущего сайта, история по публикациям в СМИ. Формулировки согласовать с Заритой. Фото из публикации, лучше собственный портрет.</span></p>
+  </div>
+</section>
+
+<!-- 4. О нас пишут: названия изданий набраны шрифтом сайта, фирменные логотипы не копируем -->
+<section class="section sand" id="press" aria-labelledby="press-title">
+  <div class="container">
+    <div class="section__head">
+      <h2 id="press-title" data-reveal>О нас пишут</h2>
+      <p class="section__lead" data-reveal style="--d: 1">Зарита Акматова объясняет в СМИ, как иностранцу получить ипотеку, как работают семейная и исламская ипотека и маткапитал.</p>
+    </div>
+  </div>
+
+  <div class="marquee marquee--press" aria-hidden="true">
+    <div class="marquee__track">
+      <ul class="marquee__list">
+        <li>РИА Недвижимость</li><li>Российская газета</li><li>RB.ru</li><li>ЦИАН</li><li>Bankiros</li><li>Метр квадратный</li><li>Московская перспектива</li><li>Islam-Today</li><li>IF24</li><li>Сравни.ру</li>
+      </ul>
+      <ul class="marquee__list">
+        <li>РИА Недвижимость</li><li>Российская газета</li><li>RB.ru</li><li>ЦИАН</li><li>Bankiros</li><li>Метр квадратный</li><li>Московская перспектива</li><li>Islam-Today</li><li>IF24</li><li>Сравни.ру</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <ul class="press" data-stagger>
+      <li class="press__item press__item--feature" data-reveal>
+        <a class="press__link" href="https://mperspektiva.ru/topics/ipotechnyy-broker-zarita-akmatova-pro-ipoteku-2024/" target="_blank" rel="noopener">
+          <span class="press__brand">Московская перспектива</span>
+          <span class="press__kind">Интервью</span>
+          <h3 class="press__title">«Ипотечный брокер Зарита Акматова: жёсткие меры ЦБ не поставят крест на возможности получения ипотеки»</h3>
+          <span class="press__more">Читать интервью <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></span>
+        </a>
+      </li>
+      <li class="press__item" data-reveal>
+        <a class="press__link" href="https://realty.ria.ru/20240222/summa-1928706558.html" target="_blank" rel="noopener">
+          <span class="press__brand">РИА Недвижимость</span>
+          <h3 class="press__title">«Не густо: какое жильё реально купить на льготную ипотеку в Москве»</h3>
+          <span class="press__more">Читать <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></span>
+        </a>
+      </li>
+      <li class="press__item" data-reveal>
+        <a class="press__link" href="https://rg.ru/2024/07/30/reg-szfo/poka-deti-ne-podrosli.html" target="_blank" rel="noopener">
+          <span class="press__brand">Российская газета</span>
+          <h3 class="press__title">«Семейную ипотеку без ограничений оставили в пяти регионах СЗФО»</h3>
+          <span class="press__more">Читать <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></span>
+        </a>
+      </li>
+      <li class="press__item" data-reveal>
+        <a class="press__link" href="https://rb.ru/opinion/mortgage-for-foreins/" target="_blank" rel="noopener">
+          <span class="press__brand">RB.ru</span>
+          <h3 class="press__title">«Ипотека для иностранцев»</h3>
+          <span class="press__more">Читать <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></span>
+        </a>
+      </li>
+      <li class="press__item" data-reveal>
+        <a class="press__link" href="https://www.cian.ru/stati-islamskaja-ipoteka-na-praktike-lichnyj-opyt-rieltora-336329/" target="_blank" rel="noopener">
+          <span class="press__brand">ЦИАН</span>
+          <h3 class="press__title">«Исламская ипотека на практике: личный опыт риелтора»</h3>
+          <span class="press__more">Читать <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></span>
+        </a>
+      </li>
+      <li class="press__item" data-reveal>
+        <a class="press__link" href="https://bankiros.ru/news/kak-ispolzovat-matkapital-dla-pokupki-kvartiry-bez-ipoteki-14338" target="_blank" rel="noopener">
+          <span class="press__brand">Bankiros</span>
+          <h3 class="press__title">«Как использовать маткапитал без ипотеки»</h3>
+          <span class="press__more">Читать <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></span>
+        </a>
+      </li>
+      <li class="press__item" data-reveal>
+        <a class="press__link" href="https://metr1.ru/2024/07/17/semejnaja-ipoteka-v-2024-godu-novye-vozmozhnosti-i-vazhnye-njuansy/" target="_blank" rel="noopener">
+          <span class="press__brand">Метр квадратный</span>
+          <h3 class="press__title">«Семейная ипотека в 2024 году»</h3>
+          <span class="press__more">Читать <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></span>
+        </a>
+      </li>
+    </ul>
+    <p class="mock-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Макет: ссылки с текущего сайта клиента, проверить, что статьи открываются. Ещё есть Islam-Today, IF24, Образ жизни.Москва, Сравни.ру; интервью РБК упоминается без ссылки, запросить.</span></p>
+  </div>
+</section>
+
+<!-- 5. Команда -->
+<section class="section dark" id="team" aria-labelledby="team-title">
+  <div class="kaima" aria-hidden="true"></div>
+  <svg class="section__lattice" aria-hidden="true"><rect width="100%" height="100%" fill="url(#o-lattice)"/></svg>
+  <div class="container">
+    <div class="section__head">
+      <h2 id="team-title" data-reveal>Кто с вами работает</h2>
+      <p class="section__lead" data-reveal style="--d: 1">В команде 26 человек в Москве и Петербурге. Вот те, кто ведёт сделки и отвечает за документы.</p>
+    </div>
+    <ul class="team" data-stagger>
+      <li class="person" data-reveal><span class="person__arch"><img src="assets/team/kevorkova-narina.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span><p class="person__name">Нарина Кеворкова</p><p class="person__role">Руководитель юридического департамента, опыт 25 лет</p></li>
+      <li class="person" data-reveal><span class="person__arch"><img src="assets/team/pardaboev-husrav.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span><p class="person__name">Хусрав Пардабоев</p><p class="person__role">Партнёр компании, опыт больше 6 лет</p></li>
+      <li class="person" data-reveal><span class="person__arch"><img src="assets/team/dushkina-viktoria.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span><p class="person__name">Виктория Душкина</p><p class="person__role">Директор по развитию, опыт 20 лет</p></li>
+      <li class="person" data-reveal><span class="person__arch"><img src="assets/team/zheenbekova-chynara.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span><p class="person__name">Чынара Жээнбекова</p><p class="person__role">Руководитель отдела продаж, опыт больше 13 лет</p></li>
+      <li class="person" data-reveal><span class="person__arch"><img src="assets/team/zhusueva-nagima.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span><p class="person__name">Нагима Жусуева</p><p class="person__role">Генеральный директор</p></li>
+      <li class="person" data-reveal><span class="person__arch"><img src="assets/team/suhrobbekov-bekzodbek.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span><p class="person__name">Бекзодбек Сухроббеков</p><p class="person__role">Консультант, опыт больше 3 лет</p></li>
+      <li class="person" data-reveal><span class="person__arch"><img src="assets/team/abazova-kanykei.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span><p class="person__name">Каныкей Абазова</p><p class="person__role">Консультант, опыт 3 года</p></li>
+      <li class="person" data-reveal><span class="person__arch"><img src="assets/team/nefedova-irina.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span><p class="person__name">Ирина Нефедова</p><p class="person__role">Главный бухгалтер, опыт больше 20 лет</p></li>
+    </ul>
+    <p class="mock-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Макет: портреты с текущего сайта приведены к одному кропу и фону, для релиза нужна пересъёмка. Должность Н. Жусуевой указана по реестру (на текущем сайте: административный менеджер), подтвердить у клиента.</span></p>
+  </div>
+</section>
+
+<!-- 6. Отзывы клиентов: видео с Boomstream клиента. Фасад: обложка и кнопка, плеер грузится только по нажатию -->
+<section class="section" id="reviews" aria-labelledby="reviews-title">
+  <div class="container">
+    <div class="section__head section__head--row">
+      <div>
+        <h2 id="reviews-title" data-reveal>Отзывы клиентов</h2>
+        <p class="section__lead" data-reveal style="--d: 1">Клиенты сами рассказывают, как прошла их сделка. Каждое видео меньше минуты.</p>
+      </div>
+      <a class="link-arrow reviews__all" href="https://youtube.com/@Planeta312" target="_blank" rel="noopener" data-reveal style="--d: 2">Все отзывы на YouTube <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+    </div>
+    <ul class="reviews" data-stagger>
+      <li class="review" data-reveal>
+        <a class="video" href="https://play.boomstream.com/JJQucCvg" target="_blank" rel="noopener" data-video="JJQucCvg" aria-label="Смотреть видеоотзыв 1, 44 секунд">
+          <img class="video__poster" src="https://cdn-g-img.boomstream.com/balancer/size:720/hcGCG547-a1.jpg" width="720" height="1280" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <span class="video__num" aria-hidden="true">01</span>
+          <span class="video__play" aria-hidden="true"><svg class="icon icon--lg"><use href="#i-play"/></svg></span>
+        </a>
+        <p class="review__cap"><span>Видеоотзыв клиента</span><span class="review__time num">0:44</span></p>
+      </li>
+      <li class="review" data-reveal>
+        <a class="video" href="https://play.boomstream.com/56k1Nvyg" target="_blank" rel="noopener" data-video="56k1Nvyg" aria-label="Смотреть видеоотзыв 2, 37 секунд">
+          <img class="video__poster" src="https://cdn-g-img.boomstream.com/balancer/size:720/HCSjdG3N-a1.jpg" width="720" height="1280" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <span class="video__num" aria-hidden="true">02</span>
+          <span class="video__play" aria-hidden="true"><svg class="icon icon--lg"><use href="#i-play"/></svg></span>
+        </a>
+        <p class="review__cap"><span>Видеоотзыв клиента</span><span class="review__time num">0:37</span></p>
+      </li>
+      <li class="review" data-reveal>
+        <a class="video" href="https://play.boomstream.com/nKIouOfY" target="_blank" rel="noopener" data-video="nKIouOfY" aria-label="Смотреть видеоотзыв 3, 53 секунд">
+          <img class="video__poster" src="https://cdn-g-img.boomstream.com/balancer/size:720/ivkW7syk-a1.jpg" width="720" height="1280" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <span class="video__num" aria-hidden="true">03</span>
+          <span class="video__play" aria-hidden="true"><svg class="icon icon--lg"><use href="#i-play"/></svg></span>
+        </a>
+        <p class="review__cap"><span>Видеоотзыв клиента</span><span class="review__time num">0:53</span></p>
+      </li>
+      <li class="review" data-reveal>
+        <a class="video" href="https://play.boomstream.com/xNHVgfye" target="_blank" rel="noopener" data-video="xNHVgfye" aria-label="Смотреть видеоотзыв 4, 46 секунд">
+          <img class="video__poster" src="https://cdn-g-img.boomstream.com/balancer/size:720/j6UifMr3-a1.jpg" width="720" height="1280" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <span class="video__num" aria-hidden="true">04</span>
+          <span class="video__play" aria-hidden="true"><svg class="icon icon--lg"><use href="#i-play"/></svg></span>
+        </a>
+        <p class="review__cap"><span>Видеоотзыв клиента</span><span class="review__time num">0:46</span></p>
+      </li>
+      <li class="review" data-reveal>
+        <a class="video" href="https://play.boomstream.com/udDIgMR6" target="_blank" rel="noopener" data-video="udDIgMR6" aria-label="Смотреть видеоотзыв 5, 36 секунд">
+          <img class="video__poster" src="https://cdn-g-img.boomstream.com/balancer/size:720/fnUeIwaq-a5.jpg" width="720" height="1280" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <span class="video__num" aria-hidden="true">05</span>
+          <span class="video__play" aria-hidden="true"><svg class="icon icon--lg"><use href="#i-play"/></svg></span>
+        </a>
+        <p class="review__cap"><span>Видеоотзыв клиента</span><span class="review__time num">0:36</span></p>
+      </li>
+      <li class="review" data-reveal>
+        <a class="video" href="https://play.boomstream.com/E6aIcjBu" target="_blank" rel="noopener" data-video="E6aIcjBu" aria-label="Смотреть видеоотзыв 6, 52 секунд">
+          <img class="video__poster" src="https://cdn-g-img.boomstream.com/balancer/size:720/uwovCMjm-a8.jpg" width="720" height="1280" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <span class="video__num" aria-hidden="true">06</span>
+          <span class="video__play" aria-hidden="true"><svg class="icon icon--lg"><use href="#i-play"/></svg></span>
+        </a>
+        <p class="review__cap"><span>Видеоотзыв клиента</span><span class="review__time num">0:52</span></p>
+      </li>
+    </ul>
+    <p class="mock-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Макет: видео и обложки подгружаются с Boomstream клиента. Подписи к видео (страна, документ, что купили) и согласие героев на публикацию подтвердить у клиента. Вымышленные текстовые кейсы v2 убраны.</span></p>
+  </div>
+</section>
+
+<!-- 7. Какой у вас документ -->
+<section class="section sand" id="docs" aria-labelledby="docs-title">
   <div class="container">
     <div class="section__head">
       <h2 id="docs-title" data-reveal>Какой у вас документ?</h2>
@@ -290,7 +483,126 @@
   </div>
 </section>
 
-<!-- 4. Квиз -->
+<!-- 8. Услуги и цены -->
+<section class="section" id="prices" aria-labelledby="prices-title">
+  <div class="container">
+    <div class="section__head">
+      <h2 id="prices-title" data-reveal>Услуги и цены</h2>
+      <p class="section__lead" data-reveal style="--d: 1">Точная цена зависит от сложности и записывается в договоре. Платите по этапам, по факту работы.</p>
+    </div>
+    <ul class="prices" data-stagger>
+      <li class="card price price--main" data-reveal>
+        <svg class="price__star" aria-hidden="true"><use href="#o-star"/></svg>
+        <div class="price__head">
+          <h3>Помощь в одобрении ипотеки</h3>
+          <p class="price__value">от&nbsp;<span data-count="100000">100&nbsp;000</span>&nbsp;₽</p>
+        </div>
+        <p>Разбор вашего случая, подбор банков, сбор документов, подача заявок, сопровождение до решения банка.</p>
+      </li>
+      <li class="card price" data-reveal>
+        <div class="price__head">
+          <h3>Сопровождение сделки под ключ</h3>
+          <p class="price__value">от&nbsp;<span data-count="50000">50&nbsp;000</span>&nbsp;₽</p>
+        </div>
+        <p>Проверка документов, подготовка договора, подписание и регистрация.</p>
+      </li>
+      <li class="card price" data-reveal>
+        <div class="price__head">
+          <h3>Покупка квартиры</h3>
+          <p class="price__value">от&nbsp;<span data-count="20000">20&nbsp;000</span>&nbsp;₽</p>
+        </div>
+        <p>Поиск, проверка квартиры и продавца, отвечаем за ваш аванс.</p>
+      </li>
+      <li class="card price" data-reveal>
+        <div class="price__head">
+          <h3>Рефинансирование</h3>
+          <p class="price__value">от&nbsp;<span data-count="50000">50&nbsp;000</span>&nbsp;₽</p>
+        </div>
+        <p>Переводим ипотеку в банк с меньшей ставкой, если это выгодно.</p>
+      </li>
+    </ul>
+
+    <h3 class="subhead" data-reveal>Другие услуги</h3>
+    <dl class="price-list" data-stagger>
+      <div data-reveal><dt>Продажа квартиры</dt><dd>от 20&nbsp;000&nbsp;₽</dd></div>
+      <div data-reveal><dt>Исламская ипотека</dt><dd>от 100&nbsp;000&nbsp;₽</dd></div>
+      <div data-reveal><dt>ИЖС, юридическое сопровождение</dt><dd>от 250&nbsp;000&nbsp;₽</dd></div>
+      <div data-reveal><dt>Налоговый вычет (3-НДФЛ)</dt><dd>от 2&nbsp;500&nbsp;₽</dd></div>
+      <div data-reveal><dt>Страхование</dt><dd>от 1&nbsp;000&nbsp;₽</dd></div>
+    </dl>
+    <p class="mock-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Макет: цены с текущего сайта. Образец договора (PDF) и условия исламской ипотеки для иностранцев запросить у клиента.</span></p>
+  </div>
+</section>
+
+<!-- 9. Как проходит работа: линия заполняется по скроллу, бейдж оплаты у каждого этапа -->
+<section class="section sand" id="steps" aria-labelledby="steps-title">
+  <div class="container steps-layout">
+    <div class="steps-layout__aside">
+      <div class="steps-layout__sticky">
+        <h2 id="steps-title" data-reveal>Как проходит работа</h2>
+        <p class="section__lead" data-reveal style="--d: 1">Вы платите за каждый этап после того, как он сделан. Суммы записаны в договоре до начала работы.</p>
+        <p class="steps-counter" aria-hidden="true"><span class="steps-counter__now" data-steps-now>1</span><span class="steps-counter__all">/5</span></p>
+      </div>
+    </div>
+    <div class="steps-layout__main">
+      <div class="steps-track" data-steps>
+      <span class="steps__rail" aria-hidden="true"><span class="steps__fill" data-steps-fill></span></span>
+      <ol class="steps">
+        <li class="step" data-step-item>
+          <span class="step__num" aria-hidden="true">1</span>
+          <div class="step__body">
+            <h3>Консультация</h3>
+            <p>Смотрим ваши документы и доход, говорим честно, какие банки возможны.</p>
+            <p class="step__pay step__pay--free"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg>Бесплатно</p>
+          </div>
+        </li>
+        <li class="step" data-step-item>
+          <span class="step__num" aria-hidden="true">2</span>
+          <div class="step__body">
+            <h3>Договор</h3>
+            <p>Подписываем договор с ООО «Планета-312» в офисе. В нём этапы, суммы и что будет при отказе банка.</p>
+            <p class="step__pay step__pay--free"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg>Бесплатно</p>
+          </div>
+        </li>
+        <li class="step" data-step-item>
+          <span class="step__num" aria-hidden="true">3</span>
+          <div class="step__body">
+            <h3>Документы и заявки в банки</h3>
+            <p>Собираем пакет документов, подаём в банки, которые работают с вашим статусом.</p>
+            <p class="step__pay"><svg class="icon" aria-hidden="true"><use href="#i-banknote"/></svg>Оплата этапа по договору</p>
+          </div>
+        </li>
+        <li class="step" data-step-item>
+          <span class="step__num" aria-hidden="true">4</span>
+          <div class="step__body">
+            <h3>Одобрение и выбор квартиры</h3>
+            <p>Получаем решение банка, помогаем найти и проверить квартиру под одобренную сумму.</p>
+            <p class="step__pay"><svg class="icon" aria-hidden="true"><use href="#i-banknote"/></svg>Оплата этапа по договору</p>
+          </div>
+        </li>
+        <li class="step step--final" data-step-item>
+          <span class="step__num" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-key"/></svg></span>
+          <div class="step__body">
+            <h3>Сделка и ключи</h3>
+            <p>Сопровождаем подписание и регистрацию, пока вы не получите ключи.</p>
+            <p class="step__pay"><svg class="icon" aria-hidden="true"><use href="#i-banknote"/></svg>Оплата этапа по договору</p>
+          </div>
+        </li>
+      </ol>
+      </div>
+      <div class="card refusal" data-reveal>
+        <svg class="icon icon--lg" aria-hidden="true"><use href="#i-rotate"/></svg>
+        <div>
+          <h3>Если банк откажет</h3>
+          <p>Подаём в другие банки из подходящих. Что вы платите и что возвращается в этом случае, записано в договоре до оплаты.</p>
+        </div>
+      </div>
+      <p class="mock-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Макет: суммы и сроки по этапам и условия при отказе банка уточнить у клиента.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Квиз «Подхожу ли я»: сюда ведёт главная кнопка первого экрана -->
 <section class="section dark" id="quiz" aria-labelledby="quiz-title">
   <div class="kaima" aria-hidden="true"></div>
   <svg class="section__lattice" aria-hidden="true"><rect width="100%" height="100%" fill="url(#o-lattice)"/></svg>
@@ -419,211 +731,7 @@
   </div>
 </section>
 
-<!-- 5. Как проходит работа: линия заполняется по скроллу -->
-<section class="section" id="steps" aria-labelledby="steps-title">
-  <div class="container steps-layout">
-    <div class="steps-layout__aside">
-      <div class="steps-layout__sticky">
-        <h2 id="steps-title" data-reveal>Как проходит работа</h2>
-        <p class="section__lead" data-reveal style="--d: 1">Вы платите за каждый этап после того, как он сделан. Суммы записаны в договоре до начала работы.</p>
-        <p class="steps-counter" aria-hidden="true"><span class="steps-counter__now" data-steps-now>1</span><span class="steps-counter__all">/5</span></p>
-      </div>
-    </div>
-    <div class="steps-layout__main">
-      <div class="steps-track" data-steps>
-      <span class="steps__rail" aria-hidden="true"><span class="steps__fill" data-steps-fill></span></span>
-      <ol class="steps">
-        <li class="step" data-step-item>
-          <span class="step__num" aria-hidden="true">1</span>
-          <div class="step__body">
-            <h3>Консультация</h3>
-            <p>Смотрим ваши документы и доход, говорим честно, какие банки возможны.</p>
-            <p class="step__pay"><svg class="icon" aria-hidden="true"><use href="#i-banknote"/></svg>Бесплатно</p>
-          </div>
-        </li>
-        <li class="step" data-step-item>
-          <span class="step__num" aria-hidden="true">2</span>
-          <div class="step__body">
-            <h3>Договор</h3>
-            <p>Подписываем договор с ООО «Планета-312» в офисе. В нём этапы, суммы и что будет при отказе банка.</p>
-            <p class="step__pay"><svg class="icon" aria-hidden="true"><use href="#i-banknote"/></svg>Без оплаты</p>
-          </div>
-        </li>
-        <li class="step" data-step-item>
-          <span class="step__num" aria-hidden="true">3</span>
-          <div class="step__body">
-            <h3>Документы и заявки в банки</h3>
-            <p>Собираем пакет документов, подаём в банки, которые работают с вашим статусом.</p>
-            <p class="step__pay"><svg class="icon" aria-hidden="true"><use href="#i-banknote"/></svg>Оплата этапа по договору</p>
-          </div>
-        </li>
-        <li class="step" data-step-item>
-          <span class="step__num" aria-hidden="true">4</span>
-          <div class="step__body">
-            <h3>Одобрение и выбор квартиры</h3>
-            <p>Получаем решение банка, помогаем найти и проверить квартиру под одобренную сумму.</p>
-            <p class="step__pay"><svg class="icon" aria-hidden="true"><use href="#i-banknote"/></svg>Оплата этапа по договору</p>
-          </div>
-        </li>
-        <li class="step step--final" data-step-item>
-          <span class="step__num" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-key"/></svg></span>
-          <div class="step__body">
-            <h3>Сделка и ключи</h3>
-            <p>Сопровождаем подписание и регистрацию, пока вы не получите ключи.</p>
-            <p class="step__pay"><svg class="icon" aria-hidden="true"><use href="#i-banknote"/></svg>Оплата этапа по договору</p>
-          </div>
-        </li>
-      </ol>
-      </div>
-      <div class="card refusal" data-reveal>
-        <svg class="icon icon--lg" aria-hidden="true"><use href="#i-rotate"/></svg>
-        <div>
-          <h3>Если банк откажет</h3>
-          <p>Подаём в другие банки из подходящих. Что вы платите и что возвращается в этом случае, записано в договоре до оплаты.</p>
-        </div>
-      </div>
-      <p class="mock-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Макет: суммы и сроки по этапам и условия при отказе банка уточнить у клиента.</span></p>
-    </div>
-  </div>
-</section>
-
-<!-- 6. Услуги и цены -->
-<section class="section sand" id="prices" aria-labelledby="prices-title">
-  <div class="container">
-    <div class="section__head">
-      <h2 id="prices-title" data-reveal>Услуги и цены</h2>
-      <p class="section__lead" data-reveal style="--d: 1">Точная цена зависит от сложности и записывается в договоре. Платите по этапам, по факту работы.</p>
-    </div>
-    <ul class="prices" data-stagger>
-      <li class="card price price--main" data-reveal>
-        <svg class="price__star" aria-hidden="true"><use href="#o-star"/></svg>
-        <div class="price__head">
-          <h3>Помощь в одобрении ипотеки</h3>
-          <p class="price__value">от&nbsp;<span data-count="100000">100&nbsp;000</span>&nbsp;₽</p>
-        </div>
-        <p>Разбор вашего случая, подбор банков, сбор документов, подача заявок, сопровождение до решения банка.</p>
-      </li>
-      <li class="card price" data-reveal>
-        <div class="price__head">
-          <h3>Сопровождение сделки под ключ</h3>
-          <p class="price__value">от&nbsp;<span data-count="50000">50&nbsp;000</span>&nbsp;₽</p>
-        </div>
-        <p>Проверка документов, подготовка договора, подписание и регистрация.</p>
-      </li>
-      <li class="card price" data-reveal>
-        <div class="price__head">
-          <h3>Покупка квартиры</h3>
-          <p class="price__value">от&nbsp;<span data-count="20000">20&nbsp;000</span>&nbsp;₽</p>
-        </div>
-        <p>Поиск, проверка квартиры и продавца, отвечаем за ваш аванс.</p>
-      </li>
-      <li class="card price" data-reveal>
-        <div class="price__head">
-          <h3>Рефинансирование</h3>
-          <p class="price__value">от&nbsp;<span data-count="50000">50&nbsp;000</span>&nbsp;₽</p>
-        </div>
-        <p>Переводим ипотеку в банк с меньшей ставкой, если это выгодно.</p>
-      </li>
-    </ul>
-
-    <h3 class="subhead" data-reveal>Другие услуги</h3>
-    <dl class="price-list" data-stagger>
-      <div data-reveal><dt>Продажа квартиры</dt><dd>от 20&nbsp;000&nbsp;₽</dd></div>
-      <div data-reveal><dt>Исламская ипотека</dt><dd>от 100&nbsp;000&nbsp;₽</dd></div>
-      <div data-reveal><dt>ИЖС, юридическое сопровождение</dt><dd>от 250&nbsp;000&nbsp;₽</dd></div>
-      <div data-reveal><dt>Налоговый вычет (3-НДФЛ)</dt><dd>от 2&nbsp;500&nbsp;₽</dd></div>
-      <div data-reveal><dt>Страхование</dt><dd>от 1&nbsp;000&nbsp;₽</dd></div>
-    </dl>
-    <p class="mock-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Макет: цены с текущего сайта. Образец договора (PDF) и условия исламской ипотеки для иностранцев запросить у клиента.</span></p>
-  </div>
-</section>
-
-<!-- 7. Кейсы -->
-<section class="section" id="cases" aria-labelledby="cases-title">
-  <div class="container">
-    <div class="section__head section__head--row">
-      <div>
-        <h2 id="cases-title" data-reveal>Истории клиентов</h2>
-        <p class="section__lead" data-reveal style="--d: 1">Люди с тем же документом, что у вас.</p>
-      </div>
-      <div class="filters" role="group" aria-label="Страна" data-reveal style="--d: 2">
-        <button type="button" class="filter" aria-pressed="true" data-filter="all">Все</button>
-        <button type="button" class="filter" aria-pressed="false" data-filter="kg">Кыргызстан</button>
-        <button type="button" class="filter" aria-pressed="false" data-filter="tj">Таджикистан</button>
-        <button type="button" class="filter" aria-pressed="false" data-filter="uz">Узбекистан</button>
-      </div>
-    </div>
-    <ul class="cases" data-stagger>
-      <li class="card case" data-country="tj" data-reveal>
-        <p class="case__flag">Пример карточки, данные условные</p>
-        <h3>Гражданин Таджикистана, патент</h3>
-        <dl class="case__data">
-          <div><dt>Доход</dt><dd>Трудовой договор</dd></div>
-          <div><dt>Сложность</dt><dd>Перерыв в оплате патента</dd></div>
-          <div class="case__result"><dt>Результат</dt><dd>Одобрение, 2-комнатная в Подмосковье</dd></div>
-          <div><dt>Срок</dt><dd>2 месяца</dd></div>
-        </dl>
-      </li>
-      <li class="card case" data-country="kg" data-reveal>
-        <p class="case__flag">Пример карточки, данные условные</p>
-        <h3>Гражданка Кыргызстана, ВНЖ</h3>
-        <dl class="case__data">
-          <div><dt>Доход</dt><dd>Самозанятая</dd></div>
-          <div><dt>Сложность</dt><dd>Доход меньше года</dd></div>
-          <div class="case__result"><dt>Результат</dt><dd>Одобрение, студия в Петербурге</dd></div>
-          <div><dt>Срок</dt><dd>6 недель</dd></div>
-        </dl>
-      </li>
-      <li class="card case" data-country="uz" data-reveal>
-        <p class="case__flag">Пример карточки, данные условные</p>
-        <h3>Гражданин Узбекистана, РВП</h3>
-        <dl class="case__data">
-          <div><dt>Доход</dt><dd>Трудовой договор</dd></div>
-          <div><dt>Сложность</dt><dd>Старая просрочка по кредиту</dd></div>
-          <div class="case__result"><dt>Результат</dt><dd>Одобрение со второго банка</dd></div>
-          <div><dt>Срок</dt><dd>3 месяца</dd></div>
-        </dl>
-      </li>
-    </ul>
-    <p class="mock-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Макет: все три кейса придуманы для показа структуры. Нужны 10–15 реальных кейсов с согласием клиентов.</span></p>
-  </div>
-</section>
-
-<!-- 8. Безопасность -->
-<section class="section dark" id="safety" aria-labelledby="safety-title">
-  <div class="kaima" aria-hidden="true"></div>
-  <div class="container">
-    <div class="section__head">
-      <h2 id="safety-title" data-reveal>Как отличить нас от мошенников</h2>
-      <p class="section__lead" data-reveal style="--d: 1">Мошенники иногда называют себя нашими сотрудниками. Проверьте пять правил перед любой оплатой.</p>
-    </div>
-    <div class="safety">
-      <ol class="rules" data-stagger>
-        <li data-reveal><span class="rules__num" aria-hidden="true">01</span><div><h3><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Пишем только с этих номеров</h3><p><a href="tel:+79268260822">+7 926 826-08-22</a>, <a href="tel:+79653115351">+7 965 311-53-51</a>, <a href="tel:+79260481811">+7 926 048-18-11</a></p></div></li>
-        <li data-reveal><span class="rules__num" aria-hidden="true">02</span><div><h3><svg class="icon" aria-hidden="true"><use href="#i-file-text"/></svg>Сначала договор, потом оплата</h3><p>Договор заключается с ООО «Планета-312». Без договора мы денег не берём.</p></div></li>
-        <li data-reveal><span class="rules__num" aria-hidden="true">03</span><div><h3><svg class="icon" aria-hidden="true"><use href="#i-banknote"/></svg>Платите только на счёт ООО или в кассу офиса</h3><p>Никогда не переводите деньги на карту частного человека, даже если он представился сотрудником.</p></div></li>
-        <li data-reveal><span class="rules__num" aria-hidden="true">04</span><div><h3><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg>Подписываем документы только в офисе</h3><p>Москва, Волгоградский пр-т, 28, или Петербург, Невский пр-т, 118.</p></div></li>
-        <li data-reveal><span class="rules__num" aria-hidden="true">05</span><div><h3><svg class="icon" aria-hidden="true"><use href="#i-user-check"/></svg>Проверьте сотрудника</h3><p>Напишите на официальный номер имя человека, который с вами общается. Мы ответим, работает ли он у нас. Фото сотрудников есть в разделе <a href="#team">«Команда»</a>.</p></div></li>
-      </ol>
-      <aside class="requisites" aria-labelledby="req-title" data-reveal style="--d: 2">
-        <div class="requisites__seal" aria-hidden="true">
-          <svg class="requisites__star"><use href="#o-star"/></svg>
-          <svg class="icon icon--lg"><use href="#i-shield"/></svg>
-        </div>
-        <h3 id="req-title">Реквизиты</h3>
-        <dl>
-          <div><dt>Организация</dt><dd>ООО «Планета-312»</dd></div>
-          <div><dt>ИНН</dt><dd class="num">5027297830</dd></div>
-          <div><dt>ОГРН</dt><dd class="num">1215000071472</dd></div>
-          <div><dt>Дата регистрации</dt><dd class="num">12.07.2021</dd></div>
-        </dl>
-        <a class="link-arrow" href="https://egrul.nalog.ru/" target="_blank" rel="noopener">Проверить в реестре ФНС <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<!-- 9. Калькулятор -->
+<!-- 11. Калькулятор -->
 <section class="section" id="calc" aria-labelledby="calc-title">
   <div class="container">
     <div class="section__head">
@@ -681,52 +789,8 @@
   </div>
 </section>
 
-<!-- 10. Основатель и команда -->
-<section class="section dark" id="team" aria-labelledby="team-title">
-  <div class="kaima" aria-hidden="true"></div>
-  <svg class="section__lattice" aria-hidden="true"><rect width="100%" height="100%" fill="url(#o-lattice)"/></svg>
-  <div class="container">
-    <h2 id="team-title" data-reveal>Кто с вами работает</h2>
-    <div class="founder">
-      <figure class="founder__frame" data-reveal style="--d: 1">
-        <svg class="founder__outline" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 1V0.36C0 0.2 0.22 0.06 0.5 0C0.78 0.06 1 0.2 1 0.36V1" vector-effect="non-scaling-stroke"/></svg>
-        <span class="founder__arch">
-          <img class="founder__photo" src="assets/founder/akmatova.webp" width="320" height="400" alt="Зарита Акматова, основатель агентства" loading="lazy" decoding="async">
-        </span>
-      </figure>
-      <div class="founder__text">
-        <h3 data-reveal>Зарита Акматова, основатель</h3>
-        <blockquote class="quote" data-reveal style="--d: 1">
-          <p>«Я проработала в банке 13 лет, от кассира до управляющего, и этот опыт помог мне в недвижимости. В 2015 году решила открыть своё агентство, чтобы помогать гражданам СНГ получать ипотеку. Сейчас мы работаем и с гражданами СНГ, и с гражданами России».</p>
-        </blockquote>
-        <ul class="stats" data-stagger>
-          <li data-reveal><span class="stats__num" data-count="13">13</span><span class="stats__text">лет работала в банке: от кассира до управляющего</span></li>
-          <li data-reveal><span class="stats__num" data-count="2015" data-count-from="2000" data-plain>2015</span><span class="stats__text">год, когда появилась идея агентства</span></li>
-          <li data-reveal><span class="stats__num" data-count="2021" data-count-from="2010" data-plain>2021</span><span class="stats__text">с этого года работает ООО «Планета-312»</span></li>
-        </ul>
-        <p class="founder__path">Сама прошла путь трудового мигранта.</p>
-        <p class="media">Комментирует ипотеку для иностранцев в СМИ: РБК, РИА Недвижимость, Bankiros, МП.</p>
-      </div>
-    </div>
-    <p class="mock-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Макет: цитата сокращена по тексту текущего сайта. Ссылки на материалы в СМИ добавить; фото из публикации, лучше заменить собственным портретом.</span></p>
-
-    <h3 class="subhead" data-reveal>Команда</h3>
-    <ul class="team" data-stagger>
-      <li class="person" data-reveal><span class="person__arch"><img src="assets/team/kevorkova-narina.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span><p class="person__name">Нарина Кеворкова</p><p class="person__role">Руководитель юридического департамента, опыт 25 лет</p></li>
-      <li class="person" data-reveal><span class="person__arch"><img src="assets/team/pardaboev-husrav.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span><p class="person__name">Хусрав Пардабоев</p><p class="person__role">Партнёр компании, опыт больше 6 лет</p></li>
-      <li class="person" data-reveal><span class="person__arch"><img src="assets/team/dushkina-viktoria.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span><p class="person__name">Виктория Душкина</p><p class="person__role">Директор по развитию, опыт 20 лет</p></li>
-      <li class="person" data-reveal><span class="person__arch"><img src="assets/team/zheenbekova-chynara.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span><p class="person__name">Чынара Жээнбекова</p><p class="person__role">Руководитель отдела продаж, опыт больше 13 лет</p></li>
-      <li class="person" data-reveal><span class="person__arch"><img src="assets/team/zhusueva-nagima.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span><p class="person__name">Нагима Жусуева</p><p class="person__role">Генеральный директор</p></li>
-      <li class="person" data-reveal><span class="person__arch"><img src="assets/team/suhrobbekov-bekzodbek.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span><p class="person__name">Бекзодбек Сухроббеков</p><p class="person__role">Консультант, опыт больше 3 лет</p></li>
-      <li class="person" data-reveal><span class="person__arch"><img src="assets/team/abazova-kanykei.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span><p class="person__name">Каныкей Абазова</p><p class="person__role">Консультант, опыт 3 года</p></li>
-      <li class="person" data-reveal><span class="person__arch"><img src="assets/team/nefedova-irina.webp" width="320" height="320" alt="" loading="lazy" decoding="async"></span><p class="person__name">Ирина Нефедова</p><p class="person__role">Главный бухгалтер, опыт больше 20 лет</p></li>
-    </ul>
-    <p class="mock-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Макет: портреты с текущего сайта приведены к одному кропу и фону, для релиза нужна пересъёмка. Должность Н. Жусуевой указана по реестру (на текущем сайте: административный менеджер), подтвердить у клиента.</span></p>
-  </div>
-</section>
-
-<!-- 11. Для граждан РФ -->
-<section class="section" id="rf" aria-labelledby="rf-title">
+<!-- 12. Для граждан РФ -->
+<section class="section sand" id="rf" aria-labelledby="rf-title">
   <div class="container">
     <div class="section__head">
       <h2 id="rf-title" data-reveal>Если у вас паспорт РФ</h2>
@@ -741,8 +805,8 @@
   </div>
 </section>
 
-<!-- 12. FAQ -->
-<section class="section sand" id="faq" aria-labelledby="faq-title">
+<!-- 13. FAQ -->
+<section class="section" id="faq" aria-labelledby="faq-title">
   <div class="container faq-layout">
     <div class="faq-layout__head">
       <h2 id="faq-title" data-reveal>Частые вопросы</h2>
@@ -784,13 +848,46 @@
   </div>
 </section>
 
-<!-- 13. Офисы -->
-<section class="section dark" id="offices" aria-labelledby="offices-title">
+<!-- 14. Безопасная сделка: как мы работаем с деньгами и документами. Ведёт прямо к офисам -->
+<section class="section dark section--to-offices" id="safety" aria-labelledby="safety-title">
   <div class="kaima" aria-hidden="true"></div>
   <div class="container">
     <div class="section__head">
+      <h2 id="safety-title" data-reveal>Всё официально</h2>
+      <p class="section__lead" data-reveal style="--d: 1">Деньги и документы проходят только через ООО «Планета-312». Вы всегда знаете, с кем заключили договор и за что платите.</p>
+    </div>
+    <div class="safety">
+      <ol class="rules" data-stagger>
+        <li data-reveal><span class="rules__num" aria-hidden="true">01</span><div><h3><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg>Договор подписываем в офисе</h3><p>В Москве на Волгоградском проспекте или в Петербурге на Невском. Адреса и маршрут <a href="#offices">ниже</a>.</p></div></li>
+        <li data-reveal><span class="rules__num" aria-hidden="true">02</span><div><h3><svg class="icon" aria-hidden="true"><use href="#i-banknote"/></svg>Оплата по этапам на счёт ООО</h3><p>Вы платите за сделанный этап на расчётный счёт ООО «Планета-312» или в кассе офиса. Суммы записаны в договоре. На личные карты сотрудников оплату не принимаем.</p></div></li>
+        <li data-reveal><span class="rules__num" aria-hidden="true">03</span><div><h3><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Звоним и пишем с официальных номеров</h3><p><a href="tel:+79268260822">+7 926 826-08-22</a>, <a href="tel:+79653115351">+7 965 311-53-51</a>, <a href="tel:+79260481811">+7 926 048-18-11</a></p></div></li>
+        <li data-reveal><span class="rules__num" aria-hidden="true">04</span><div><h3><svg class="icon" aria-hidden="true"><use href="#i-user-check"/></svg>Сотрудника легко проверить</h3><p>Позвоните на официальный номер и назовите имя человека, который с вами общается. Мы подтвердим, что он работает у нас. Фото сотрудников есть в разделе <a href="#team">«Команда»</a>.</p></div></li>
+      </ol>
+      <aside class="requisites" aria-labelledby="req-title" data-reveal style="--d: 2">
+        <div class="requisites__seal" aria-hidden="true">
+          <svg class="requisites__star"><use href="#o-star"/></svg>
+          <svg class="icon icon--lg"><use href="#i-shield"/></svg>
+        </div>
+        <h3 id="req-title">Реквизиты для договора и оплаты</h3>
+        <dl>
+          <div><dt>Организация</dt><dd>ООО «Планета-312»</dd></div>
+          <div><dt>ИНН</dt><dd class="num">5027297830</dd></div>
+          <div><dt>ОГРН</dt><dd class="num">1215000071472</dd></div>
+          <div><dt>Дата регистрации</dt><dd class="num">12.07.2021</dd></div>
+        </dl>
+        <a class="link-arrow" href="https://egrul.nalog.ru/" target="_blank" rel="noopener">Проверить в реестре ФНС <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 15. Офисы и финальное действие. Продолжает тёмный блок «Всё официально»: переход отмечен линией маршрута -->
+<section class="section dark section--joined" id="offices" aria-labelledby="offices-title">
+  <div class="bridge" aria-hidden="true" data-draw><span class="bridge__line"></span><span class="bridge__pin"><svg class="icon"><use href="#i-map-pin"/></svg></span></div>
+  <div class="container">
+    <div class="section__head">
       <h2 id="offices-title" data-reveal>Офисы</h2>
-      <p class="section__lead" data-reveal style="--d: 1">Документы подписываем только здесь. Перед визитом напишите, чтобы вас встретили.</p>
+      <p class="section__lead" data-reveal style="--d: 1">Здесь подписываем договор и принимаем оплату. Перед визитом напишите, чтобы вас встретили.</p>
     </div>
     <ul class="offices" data-stagger>
       <li class="office" data-reveal>
@@ -820,23 +917,43 @@
         </div>
       </li>
     </ul>
-    <div class="contacts" data-reveal>
-      <a class="btn btn--primary btn--lg" href="#" data-wa data-magnetic data-wa-text="Здравствуйте, я с сайта planeta312.com. Хочу прийти в офис.">
-        <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Написать в WhatsApp</span>
-      </a>
-      <a class="btn btn--ghost-dark btn--lg" href="#" data-tg>
-        <svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg><span>Telegram</span>
-      </a>
-      <a class="btn btn--ghost-dark btn--lg" href="tel:+79268260822">
-        <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>+7 926 826-08-22</span>
-      </a>
+    <div class="final light" id="contact" data-reveal>
+      <svg class="final__star" aria-hidden="true"><use href="#o-star"/></svg>
+      <div class="final__text">
+        <h2 class="final__title" id="final-title">Начните с бесплатной консультации</h2>
+        <p class="final__lead">Расскажите, какой у вас документ и где вы работаете. Ответим, какие банки возможны и что подготовить.</p>
+        <div class="actions">
+          <a class="btn btn--primary btn--lg" href="#" data-wa data-magnetic data-wa-text="Здравствуйте, я с сайта planeta312.com. Хочу бесплатную консультацию по ипотеке.">
+            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Написать в WhatsApp</span>
+          </a>
+          <a class="btn btn--secondary btn--lg" href="#" data-tg>
+            <svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg><span>Telegram</span>
+          </a>
+        </div>
+        <a class="final__phone" href="tel:+79268260822"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span class="num">+7 926 826-08-22</span></a>
+      </div>
+      <form class="form final__form" data-callback novalidate aria-labelledby="final-form-title">
+        <p class="final__form-title" id="final-form-title">Или оставьте номер, перезвоним</p>
+        <div class="field">
+          <label for="fin-name">Как к вам обращаться</label>
+          <input id="fin-name" name="name" type="text" autocomplete="given-name" required aria-describedby="fin-name-err">
+          <p class="field__error" id="fin-name-err" hidden>Напишите имя</p>
+        </div>
+        <div class="field">
+          <label for="fin-phone">Номер телефона</label>
+          <input id="fin-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required aria-describedby="fin-phone-err">
+          <p class="field__error" id="fin-phone-err" hidden>Проверьте номер: нужно 11 цифр, например +7 926 826-08-22</p>
+        </div>
+        <button class="btn btn--secondary" type="submit">Перезвоните мне</button>
+        <p class="hint" data-callback-ok hidden>Макет: заявка никуда не отправляется. В рабочей версии уйдёт в Bitrix24 клиента.</p>
+      </form>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- 14. Футер -->
+<!-- 16. Футер -->
 <footer class="footer dark">
   <div class="container footer__grid">
     <div>
@@ -883,6 +1000,12 @@
   <a class="dock__item" href="#" data-tg><svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg><span>Telegram</span></a>
   <a class="dock__item" href="tel:+79268260822"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>Позвонить</span></a>
 </nav>
+
+<!-- Плеер видеоотзыва: iframe Boomstream создаётся только по нажатию и удаляется при закрытии -->
+<dialog class="vmodal" data-vmodal aria-label="Видеоотзыв">
+  <button class="vmodal__close" type="button" data-vmodal-close aria-label="Закрыть видео"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-x"/></svg></button>
+  <div class="vmodal__frame" data-vmodal-frame></div>
+</dialog>
 
 <div class="toast" role="status" aria-live="polite" hidden data-toast></div>
 

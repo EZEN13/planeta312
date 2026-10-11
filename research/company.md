@@ -51,3 +51,24 @@ Hero + форма «Перезвоните мне» → Услуги с цена
 
 ## Скриншоты
 В контейнере нет браузера — скриншоты текущего сайта не сняты.
+
+## Публикации в СМИ (ссылки с текущего сайта, 2024)
+- РИА Недвижимость — «Не густо: какое жильё реально купить на льготную ипотеку в Москве» — https://realty.ria.ru/20240222/summa-1928706558.html
+- Российская газета — «Семейную ипотеку без ограничений оставили в пяти регионах СЗФО» — https://rg.ru/2024/07/30/reg-szfo/poka-deti-ne-podrosli.html
+- RB.ru — «Ипотека для иностранцев» — https://rb.ru/opinion/mortgage-for-foreins/
+- RB.ru — «Исламский банкинг» — https://rb.ru/opinion/islamic-banking-2024/
+- ЦИАН — «Исламская ипотека на практике: личный опыт риелтора» — https://www.cian.ru/stati-islamskaja-ipoteka-na-praktike-lichnyj-opyt-rieltora-336329/
+- Bankiros — «Как использовать маткапитал без ипотеки» — https://bankiros.ru/news/kak-ispolzovat-matkapital-dla-pokupki-kvartiry-bez-ipoteki-14338
+- Московская перспектива — интервью «Ипотечный брокер Зарита Акматова» — https://mperspektiva.ru/topics/ipotechnyy-broker-zarita-akmatova-pro-ipoteku-2024/
+- Метр квадратный (metr1.ru) — «Семейная ипотека в 2024 году» — https://metr1.ru/2024/07/17/semejnaja-ipoteka-v-2024-godu-novye-vozmozhnosti-i-vazhnye-njuansy/
+- Islam-Today — «Исламская ипотека в России» — https://islam-today.ru/ekonomika/islamskaa-ipoteka-v-rossii-novye-gorizonty-finansirovania/
+- IF24 — «Иностранцы всё чаще выбирают Россию» — https://www.if24.ru/inostrantsy-vse-chashhe-vybirayut-rossiyu-dlya-pokupki-nedvizhimosti/
+- Образ жизни.Москва — «Планета-312: иностранцы в России» — https://образжизни.москва/planeta-312-inostrantsy-v-rossii-legko-li-kupit-zhile-v-rossii-i-vse-o-rynke-nedvizhimosti/
+- Сравни.ру — 5 экспертных ответов (sravni.ru/q/...)
+- В тексте сайта упоминается интервью РБК (ссылки нет).
+
+## Видеоотзывы
+11 видео на Boomstream, ID: JJQucCvg, xNHVgfye, VwfO0EzC, udDIgMR6, SyJDmwFh, S30V72yR, PccobyV5, nKIouOfY, E6aIcjBu, A2kGZn2c, 56k1Nvyg (плеер play.boomstream.com/<ID>). YouTube-канал https://youtube.com/@Planeta312, Instagram https://www.instagram.com/ipoteka_sng/.
+
+## CRM
+На сайте стоит виджет Bitrix24 — заявки идут в Bitrix24 (учесть при подключении форм).
